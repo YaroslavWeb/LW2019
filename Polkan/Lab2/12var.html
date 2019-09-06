@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="bg-dark text-white">Лабораторная работа №2 (12 вар)</h1>
+            <h1 class="bg-dark text-white">Лабораторная работа №2 (12 вариант)</h1>
         </div>
         <hr>
         <div class="section">
@@ -61,7 +61,7 @@ let mathRazrez = ()=>{
     };
     if(x < 0 && x >= -1){
         y1 = Math.sqrt(1-x**2);
-        y2 = Math.sqrt(0.25-(0.5-x)*(0.5+x));
+        y2 = Math.sqrt(0.25-(0.5-Math.abs(x))*(0.5 - Math.abs(x)));
         y_razrez = y1+y2;
     };
     if(x == 0){
