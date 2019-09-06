@@ -1,12 +1,25 @@
+"use strict";
 let y_razrez,
     s_left,
     s_right,
-    x,y1,y2;
+    x, y1, y2;
+
+let numberMask = IMask(
+    document.getElementById('input-mask'), {
+        mask: Number,
+        min: -1,
+        max: 1,
+        radix: '.',
+        scale: 10
+    });
 
 $('.btn').click(() => {
-    x =+ $('.form-control').val();
+    x = +$('.form-control').val();
+    alert(x);
     x > 1 || x < -1 ?
-        $('.output').empty().append(`Вы ввели неправильное число`) :
+        $('.output').empty().append(`
+    Вы ввели неправильное число
+    `) :
         mathRazrez();
 });
 
