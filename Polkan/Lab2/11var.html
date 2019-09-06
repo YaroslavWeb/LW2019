@@ -5,18 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Здесь будет решение 11 варианта</h1>
+        <div class="container">
+                <div class="header">
+                    <h1 class="bg-dark text-white">Лабораторная работа №2 (12 вар)</h1>
+                </div>
+                <hr>
+                <div class="section">
+                    <h2 class="title">Выполнил студент: Романов Н.В.</h2>
+                    <img src="./img/11var.png" class="rounded mx-auto d-block">
+        
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Введите значение X">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id = "button">Вычислить</button>
+                        </div>
+                    </div>
+        
+                    <div class='output'></div>
+                </div>
+            </div>
     <script>
-    var x = prompt('Введите X', 0.5);
-    if (x<1.0 && x>0.0) {
-        var y =Math.sqrt(1.0-(x ) * (x));
-        alert(y.toFixed(4));
- var y1 = Math.sqrt(0.25-(0.5-x)*(0.5-x));
- alert(y1.toFixed(4));
-  var y_razrez=y+y1;
-  alert(y_razrez.toFixed(4));
+      
+//     var x = prompt('Введите X', 0.5);
+//     if (x<1.0 && x>0.0) {
+//         var y =Math.sqrt(1.0-(x ) * (x));
+//         alert(y.toFixed(4));
+//  var y1 = Math.sqrt(0.25-(0.5-x)*(0.5-x));
+//  alert(y1.toFixed(4));
+//   var y_razrez=y+y1;
+//   alert(y_razrez.toFixed(4));
   
 //  var alfa= Math.atan(y/x);
 //  var segment=0.5*(alfa-Math.sin(alfa));
@@ -31,7 +51,7 @@
 // alert('Y='+ y_razrez);
 // alert('левая площадь: '+ s_left + 'и Правая площадь:' + s_right);
 
-    }
+    
     
     </script>
 </body>
