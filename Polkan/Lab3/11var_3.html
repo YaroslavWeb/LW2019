@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="bg-dark text-white">Лабораторная работа №3 (11 вариант)</h1>
+        </div>
+        <hr>
+        <div class="section">
+            <h2 class="title">Выполнил студент: Романов Н.В.</h2>
+            <img src="./img_3/11var_3.png" class="rounded mx-auto d-block">
+
+            <div class="input-group">
+                <input type="number" class="form-control" id = "x_nach"  placeholder="Введите Х начальное"> 
+                <input type="number" class="form-control" id = "x_kon"  placeholder="Введите Х конечное ">
+                <input type="number" class="form-control" id = "delta_x"  placeholder="шаг изменения delta_x">
+                <input type="number" class="form-control" id = "eps"  placeholder="Введите точность">
+                <input type="number" class="form-control" id = "a"  placeholder="Введите значение а">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button">Вычислить</button>
+                </div>
+            </div>
+
+            <div class='output' id = "output"></div>
+        </div>
+    </div>
+</body>
+
+<script src="./11var_3.js"></script>
+</html>
