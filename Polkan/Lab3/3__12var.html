@@ -22,18 +22,34 @@
             <img src="./img/12var-1.png" class="img-fluid rounded mx-auto d-block">
         </div>
 
+
         <div class="row">
             <div class="col-3">
-                <input class="form-control" id="input-mask" placeholder="Начало">
+                Начальное значение Х
             </div>
             <div class="col-3">
-                <input class="form-control" id="input-mask" placeholder="Конец">
+                Конечное значение X
             </div>
             <div class="col-3">
-                <input class="form-control" id="input-mask" placeholder="Шаг">
+                Шаг
             </div>
             <div class="col-3">
-                <input class="form-control" id="input-mask" placeholder="Точность">
+                Точность
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <input maxlength="6" class="form-control" id="input-begin" placeholder="x_begin">
+            </div>
+            <div class="col-3">
+                <input maxlength="6" class="form-control" id="input-end" placeholder="x_end">
+            </div>
+            <div class="col-3">
+                <input maxlength="6" class="form-control" id="input-step" placeholder="step">
+            </div>
+            <div class="col-3">
+                <input maxlength="6" class="form-control" id="input-eps" placeholder="eps">
             </div>
         </div>
         <hr>
@@ -47,28 +63,16 @@
             <div class="col-12">
                 <table class="table">
                     <thead class="thead-dark">
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                      </tr>
+                        <tr>
+                            <th scope="col">X</th>
+                            <th scope="col">N</th>
+                            <th scope="col">S</th>
+                            <th scope="col">F(x)</th>
+                        </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
                     </tbody>
-                  </table>
+                </table>
             </div>
         </div>
     </div>
@@ -77,6 +81,6 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://unpkg.com/imask"></script>
 
-<script src="./12var.js"></script>
+<script src="./3__12var.js"></script>
 
 </html>
