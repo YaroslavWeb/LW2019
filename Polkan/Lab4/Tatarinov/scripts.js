@@ -1,7 +1,6 @@
 "use strict";
 let t, s, f, i, n;
 
-
 IMask(document.getElementById('input-n'), {
     mask: Number,
     min:0,
@@ -12,18 +11,11 @@ IMask(document.getElementById('input-n'), {
 
 $('#calc').click(() => {
     $('tbody').empty();
-    x_begin = +$('#input-begin').val();
-    x_end = +$('#input-end').val();
-    step = +$('#input-n').val();
+    n = +$('#input-n').val();
     x = x_begin;
 
-    step != 0 && x_begin <= x_end ?
-     calculate() :
-    $('tbody').empty().append(`
-    <tr>
-        <td>Введены некоректные данные</td>
-    </tr>
-    `);
+    step != 0 && x_begin <= x_end ?calculate() 
+    :alert(`Введены некоректные данные`);
 });
 
 let calculate = () => {

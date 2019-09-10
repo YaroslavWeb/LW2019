@@ -19,7 +19,8 @@ let numberMask = IMask(
 
 $('#calc').click(() => {
     x = +$('.form-control').val();
-    x > 1 || x < -1 ?
+    
+    x > 1 || x < -1 || $('.form-control').val() == '' ?
         $('.output').empty().append(`Вы ввели неправильное число`) :
         calculate();
 });
@@ -41,8 +42,7 @@ let calculate = () => {
         s2 = seg2 - st2;
         s_right = s1 + s2;
         s_left = ((Math.PI) / 2) - s_right;
-    };
-    if (x < 0 && x >= -1) {
+    } else if (x < 0 && x >= -1) {
         //Вычисление разреза
         y1 = Math.sqrt(1 - x ** 2);
         y2 = Math.sqrt(0.25 - (0.5 - Math.abs(x)) * (0.5 - Math.abs(x)));
@@ -58,8 +58,7 @@ let calculate = () => {
         s2 = seg2 + st2;
         s_left = s1 + s2;
         s_right = (Math.PI / 2) - s_left;
-    };
-    if (x == 0) {
+    } else if (x == 0) {
         y1 = 1;
         y2 = 0;
         y_razrez = 1;
