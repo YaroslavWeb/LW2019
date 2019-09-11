@@ -2,7 +2,7 @@ let x0 = Math.round(Math.random() * (1000 - 1) + 1),
     a = 630360016,
     m = 2147483647,
     A = [],
-    x = x0;
+    x,
     n = 3000,
     sum = 0;
 

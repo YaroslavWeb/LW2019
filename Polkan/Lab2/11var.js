@@ -1,20 +1,25 @@
 'use strict';
 
-var numberMask = IMask(
-    document.getElementById('input-mask'), {
-        mask: Number,
-        min: -1,
-        max: 1,
-        radix: '.',
-        scale: 10
-    }); 
-
+// var numberMask = IMask(
+//     document.getElementById('input-mask'), {
+//         mask: Number,
+//         min: -1,
+//         max: 1,
+//         radix: '.',
+//         scale: 10
+//     }); 
         var a = document.getElementById('button');
         a.onclick = function () {
+            setTimeout(() => {
+                $('.output').empty();
+            }, 3000);
             var text = document.getElementsByTagName("input")[0];
             var x = text.value;
             x = Number(x);
-            if (x > 0.0 && x < 1.0) {
+            x > 1 || x < -1 || $('.form-control').val() == '' ?
+            $('.output').empty().append(`X вне диапазона`) :
+            calculate();
+           function calculate() { if (x > 0.0 && x < 1.0) {
                 var y = Math.sqrt(1.0 - (x) * (x));
                 var y1 = Math.sqrt(0.25 - (0.5 - Math.abs(x)) * (0.5 - Math.abs(x)));
                 var y_razrez = y + y1;
@@ -78,4 +83,4 @@ var numberMask = IMask(
             }
 
         }
-   
+    }

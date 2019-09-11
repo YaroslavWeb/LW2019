@@ -8,20 +8,20 @@ let y_razrez,
     st1, st2,
     s1, s2;
 
-let numberMask = IMask(
-    document.getElementById('input-mask'), {
-        mask: Number,
-        min: -1,
-        max: 1,
-        radix: '.',
-        scale: 10
-    });
+// let numberMask = IMask(
+//     document.getElementById('input-mask'), {
+//         mask: Number,
+//         min: -1,
+//         max: 1,
+//         radix: '.',
+//         scale: 10
+//     });
 
 $('#calc').click(() => {
     x = +$('.form-control').val();
     
     x > 1 || x < -1 || $('.form-control').val() == '' ?
-        $('.output').empty().append(`Вы ввели неправильное число`) :
+        $('.output').empty().append(`Вы ввели значение вне диапазона`) :
         calculate();
 });
 
@@ -67,8 +67,8 @@ let calculate = () => {
     };
 
     $('.output').empty().append(`
-        y_разрез = ${y_razrez.toFixed(4)}|
-        s_левая = ${s_left.toFixed(4)}|
+        y_разрез = ${y_razrez.toFixed(4)} <br>
+        s_левая = ${s_left.toFixed(4)}<br>
         s_правая = ${s_right.toFixed(4)}
     `);
 }

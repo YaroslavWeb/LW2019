@@ -1,49 +1,57 @@
 "use strict";
-let t, s, f, i, n;
+let t, s, f, index, n; //1 задание
 
-IMask(document.getElementById('input-n'), {
-    mask: Number,
-    min:0,
-    max:999999,
-    radix: '.',   
-    scale:6 
-});
 
-$('#calc').click(() => {
-    $('tbody').empty();
+$('#calc1').click(() => {
+    $('#output').empty();
     n = +$('#input-n').val();
-    x = x_begin;
-
-    step != 0 && x_begin <= x_end ?calculate() 
-    :alert(`Введены некоректные данные`);
+    $('#input-n').val() != '' ? calculate() :
+        alert(`Введены некоректные данные`);
 });
 
 let calculate = () => {
-    do {
-        n = 1;
-        t = 1;
-        s = 1;
-        f = ((Math.E ** x) + (Math.E ** -x)) / 2;
-
-        while (Math.abs(t) > eps) {
-            t = (t * x * x) / (2 * n * (2 * n - 1));
-            s = s + t;
-            n = n + 1;
-        }
+    t = 1;
+    s = 0;
+    f = n * (n + 1);
+    index = 0;
+    for (let i = 1; i <= n; i++) {
+        t = 2 * i;
+        s += t;
+        index++;
         addRow();
-        x = x + step;
-    } while (x < x_end)
+    }
+
+    $('#output').append(`
+<ul class="list-group list-group-horizontal-md">
+    <li class="list-group-item col-12 text-center">f = ${f}</li>
+</ul>
+`);
 }
 
-let addRow = () => $('tbody').append(`
-    <tr>
-        <td>${x.toFixed(4)}</td>
-        <td>${n}</td>
-        <td>${s.toFixed(8)}</td>
-        <td>${f.toFixed(8)}</td>
-    </tr>
-    <ul class="list-group list-group-horizontal-md">
-    <li class="list-group-item col-6 text-center">i</li>
-    <li class="list-group-item col-6 text-center">s</li>
+let addRow = () => $('#output').append(`
+<ul class="list-group list-group-horizontal-md">
+    <li class="list-group-item col-6 text-center">${index}</li>
+    <li class="list-group-item col-6 text-center">${s}</li>
 </ul>
     `);
+let x, y, y0, i; //2 задание
+
+$('#calc2').click(() => {
+    $('.output2').empty();
+    x = +$('#input-x').val();
+    $('#input-x').val() != '' ? calculate2() 
+    : alert(`Введены некоректные данные`);
+});
+
+let calculate2 = () => {
+    y = Math.sqrt(x);
+    y0 = x;
+    s = 0;
+    s = y0 + (x / y0 - y0) / 2;
+    $('.output2').append(`yi = ${s.toFixed(2)} <br>`);
+    while (s > y) {
+        s = s + (x / s - s) / 2;
+        $('.output2').append(`yi = ${s.toFixed(24)} <br>`);
+    }
+    $('.output2').append(`y = ${s.toFixed(24)}`);
+}

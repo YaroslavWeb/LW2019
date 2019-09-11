@@ -3,28 +3,6 @@ let x, x_begin, x_end,
     step, eps, f, t, n, s;
 
 
-IMask(document.getElementById('input-begin'), {
-    mask: Number,
-    radix: '.',
-});
-IMask(document.getElementById('input-end'), {
-    mask: Number,
-    max:100,
-    radix: '.',
-});
-IMask(document.getElementById('input-step'), {
-    mask: Number,
-    radix: '.',
-});
-
-IMask(document.getElementById('input-eps'), {
-    mask: Number,
-    min: 0,
-    max: 0.1,
-    radix: '.',
-});
-
-
 $('#calc').click(() => {
     $('tbody').empty();
     x_begin = +$('#input-begin').val();
