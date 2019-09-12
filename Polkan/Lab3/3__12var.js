@@ -11,13 +11,8 @@ $('#calc').click(() => {
     eps = +$('#input-eps').val();
     x = x_begin;
 
-    step != 0 && x_begin <= x_end && step <= x_end ?
-     calculate() :
-    $('tbody').empty().append(`
-    <tr>
-        <td>Введены некоректные данные</td>
-    </tr>
-    `);
+    if(step != 0 && $('#input-step').val() == '' ) 
+    calculate();
 });
 
 let calculate = () => {
