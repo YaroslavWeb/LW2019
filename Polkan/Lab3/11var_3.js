@@ -1,15 +1,17 @@
 'use strict';
 let x_nachMask = IMask(document.getElementById('x_nach'), {
     mask: Number,
+    min: -100,
     radix: '.',
 });
 let x_konMask = IMask(document.getElementById('x_kon'), {
     mask: Number,
-    max:100,
+    min: -100,
     radix: '.',
 });
 let delta_xMask = IMask(document.getElementById('delta_x'), {
     mask: Number,
+    min: -100,
     radix: '.',
 });
 
@@ -69,5 +71,23 @@ s = ${s.toFixed(5)}, f = ${f.toFixed(1)}<br> `);
 x=x+delta_x; }
 while (x<=x_kon)
 }
-else {$("#output").append('Х конечное не может быть меньше Х начального, или шаг не может быть большего Х конечного');}
-}
+ else if (x_nach>x_kon && delta_x<0) {
+    var x=x_nach;
+    do {
+    var t=1;
+    var s=1;
+    var n=1;
+    var f =Math.exp(Math.log(a)*x);
+    while (Math.abs(t)>eps) {
+    t=t*(x*Math.log(a))/n;
+    s=s+t;
+    n=n+1;
+    }
+    $("#output").append(`   x=${x}, n= ${n}, 
+s = ${s.toFixed(5)}, f = ${f.toFixed(1)}<br> `);
+    x=x+delta_x;
+console.log(s); }
+    while (x>=x_kon)
+    
+    }
+    }
