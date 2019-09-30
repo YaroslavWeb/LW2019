@@ -1,34 +1,4 @@
 'use strict';
-let x_nachMask = IMask(document.getElementById('x_nach'), {
-    mask: Number,
-    min: -100,
-    radix: '.',
-});
-let x_konMask = IMask(document.getElementById('x_kon'), {
-    mask: Number,
-    min: -100,
-    radix: '.',
-});
-let delta_xMask = IMask(document.getElementById('delta_x'), {
-    mask: Number,
-    min: -100,
-    radix: '.',
-});
-
-let epsMask = IMask(document.getElementById('eps'), {
-    mask: Number,
-    min: 0,
-    max: 0.1,
-    radix: '.',
-});
-let aMask = IMask(document.getElementById('a'), {
-    mask: Number,
-    min: 1,
-    max: 100,
-    radix: '.',
-});
-
-
 var a = document.getElementById('button');
 a.onclick = function () {
     $("#output").empty();
@@ -89,5 +59,7 @@ s = ${s.toFixed(5)}, f = ${f.toFixed(1)}<br> `);
 console.log(s); }
     while (x>=x_kon)
     
+    } else if (x_nach<0 && x_kon>0 && delta_x <0) {
+        $("#output").append(` Неверные данные`);
     }
     }
