@@ -61,5 +61,7 @@ console.log(s); }
     
     } else if (x_nach<0 && x_kon>0 && delta_x <0) {
         $("#output").append(` Неверные данные`);
+    } else if (delta_x == 0) {
+        $("#output").append(` Шаг не может быть равен нулю`);
     }
     }
