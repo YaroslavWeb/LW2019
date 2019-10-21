@@ -1,9 +1,7 @@
 'use strict';
-
-
 var a = document.getElementById('button');
 a.onclick = function () {
-    $("#output").empty();
+    $("tbody").empty();
     var x_nach = document.getElementById('x_nach');
     x_nach = x_nach.value;
     x_nach = Number(x_nach);
@@ -37,13 +35,41 @@ a.onclick = function () {
                 t = t * (x * Math.log(a)) / n;
                 s = s + t;
                 n = n + 1;
+            };
+            $("tbody").append(`
+            <tr>
+<td>${x.toFixed(3)}</td>
+<td>${n}</td>
+<td>${s.toFixed(3)}</td>
+<td>${f.toFixed(3)}</td>
+            </tr> `);
+            x = x + delta_x;
+        }
+        while (x <= x_kon)
+    }
+
+    else if (x_nach > x_kon && delta_x < 0) {
+        var x = x_nach;
+        do {
+            var t = 1;
+            var s = 1;
+            var n = 1;
+            var f = Math.exp(Math.log(a) * x);
+            while (Math.abs(t) > eps) {
+                t = t * (x * Math.log(a)) / n;
+                s = s + t;
+                n = n + 1;
             }
             $("#output").append(`   x=${x}, n= ${n}, 
 s = ${s.toFixed(5)}, f = ${f.toFixed(1)}<br> `);
             x = x + delta_x;
+            console.log(s);
         }
-        while (x <= x_kon)
-    } else {
-        $("#output").append('Х конечное не может быть меньше Х начального, или шаг не может быть большего Х конечного');
+        while (x >= x_kon)
+    }
+     else if (x_nach < 0 && x_kon > 0 && delta_x < 0) {
+        $("#output").append(` Неверные данные`);
+    } else if (delta_x == 0) {
+        $("#output").append(` Шаг не может быть равен нулю`);
     }
 }

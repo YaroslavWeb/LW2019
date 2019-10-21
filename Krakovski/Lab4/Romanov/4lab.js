@@ -16,3 +16,5 @@ var result = arr.reduce(function(sum, current) {
   }, 0);
   
   $(".row").append(`i=${i} <br> k=${k} <br> X = ${result}`); 
+
+  
