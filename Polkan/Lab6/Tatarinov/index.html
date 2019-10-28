@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LW '19-'20</title>
+    <!--Libs-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="bg-dark text-white">Лабораторная работа №6 (12 вариант)</h1>
+        </div>
+        <hr>
+        <div class="section">
+            <h2 class="title">Выполнил студент: Татаринов Я.А.</h2>
+        </div>
+        <hr>
+        <h3 class="title">Задание 1</h3>
+        <img src="./img.png" class="img-fluid rounded mx-auto d-block">
+        <div class="row">
+
+            <div class="col-4">
+                <input placeholder="Длинна строки" maxlength="4" class="form-control" id="n" value="10">
+            </div>
+            <div class="col-4">
+                <input placeholder="Минимальное значение" maxlength="4" class="form-control" id="v_min" value="-5">
+            </div>
+            <div class="col-4">
+                <input placeholder="Максимальное значение" maxlength="4" class="form-control" id="v_max" value="10">
+            </div>
+            <div class="col-12">
+                <button class="btn btn-outline-secondary btn-lg btn-block" id="calc1" type="button">Вычислить</button>
+            </div>
+            <div class="col-12">
+                <div id="output1"></div>
+            </div>
+        </div>
+        <hr>
+        <h3 class="title">Задание 2</h3>
+        <img src="./img1.png" class="img-fluid rounded mx-auto d-block">
+        <div class="row">
+            <div class="col-6">
+                <input maxlength="4" class="form-control" id="w" value="5">
+            </div>
+            <div class="col-6">
+                <input maxlength="4" class="form-control" id="h" value="6">
+            </div>
+            <div class="col-12">
+                <button class="btn btn-outline-secondary btn-lg btn-block" id="calc2"
+                    type="button">Преобразовать</button>
+            </div>
+            <div class="col-12">
+                <div id="output2"></div>
+            </div>
+        </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script src="./scripts.js"></script>
+
+</html>
