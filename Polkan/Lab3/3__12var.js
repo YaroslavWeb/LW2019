@@ -13,11 +13,10 @@ $('#calc').click(() => {
     eps = +$('#input-eps').val();
     x = x_begin;
 
-    if(step == 0) errorLog.push(`Шаг не может быть равен 0;`);
-    if($('#input-step').val() == '') errorLog.push(`Введите значение шага`);
-    if($('#input-begin').val() == '') errorLog.push(`Введите начальное значение`);
-    if($('#input-end').val() == '') errorLog.push(`Введите конечное значение`);
-    if($('#input-eps').val() == '') errorLog.push(`Введите значение погрешности`);
+    if(step == '' || step == 0 || (x_begin > x_end && step > 0) || (x_begin < x_end && step < 0) || step > x_end) errorLog.push(`Некорректное значение шага`);
+    if($('#input-begin').val() == '') errorLog.push(`Некорректное начальное значение`);
+    if($('#input-end').val() == '') errorLog.push(`Некорректное конечное значение`);
+    if($('#input-eps').val() == '') errorLog.push(`Некорректное значение погрешности`);
 
     errorLog.forEach(element => {
         alert(element);
@@ -26,10 +25,12 @@ $('#calc').click(() => {
     if(errorLog.length == 0){
         calculate();
         errorLog.splice(0, errorLog.length);
+        
     }
 });
 
 let calculate = () => {
+    if (x_end > x_begin && step < x_end) {
     do {
         n = 1;
         t = 1;
@@ -43,7 +44,25 @@ let calculate = () => {
         }
         addRow();
         x = x + step;
-    } while (x < x_end)
+    } while (x <= x_end)
+}
+
+else if (x_begin > x_end && step < 0){
+    do{
+        n = 1;
+        t = 1;
+        s = 1;
+        f = ((Math.E ** x) + (Math.E ** -x)) / 2;
+
+        while (Math.abs(t) > eps) {
+            t = (t * x * x) / (2 * n * (2 * n - 1));
+            s = s + t;
+            n = n + 1;
+        }
+        addRow();
+        x = x + step;
+    }while (x >= x_end)
+}
 }
 
 let addRow = () => $('tbody').append(`

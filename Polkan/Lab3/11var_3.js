@@ -31,6 +31,7 @@ a.onclick = function () {
             var s = 1;
             var n = 1;
             var f = Math.exp(Math.log(a) * x);
+            
             while (Math.abs(t) > eps) {
                 t = t * (x * Math.log(a)) / n;
                 s = s + t;
