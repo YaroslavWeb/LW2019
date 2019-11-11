@@ -25,13 +25,13 @@
         <div class="row">
 
             <div class="col-4">
-                <input placeholder="Длинна строки" maxlength="4" class="form-control" id="n" value="10">
+                <input type="number" placeholder="Длинна строки" maxlength="4" class="form-control" id="n" value="10">
             </div>
             <div class="col-4">
-                <input placeholder="Минимальное значение" maxlength="4" class="form-control" id="v_min" value="-5">
+                <input type="number" placeholder="min" maxlength="8" class="form-control" id="v_min" value="-5">
             </div>
             <div class="col-4">
-                <input placeholder="Максимальное значение" maxlength="4" class="form-control" id="v_max" value="10">
+                <input type="number" placeholder="max" maxlength="8" class="form-control" id="v_max" value="10">
             </div>
             <div class="col-12">
                 <button class="btn btn-outline-secondary btn-lg btn-block" id="calc1" type="button">Вычислить</button>
@@ -44,15 +44,22 @@
         <h3 class="title">Задание 2</h3>
         <img src="./img1.png" class="img-fluid rounded mx-auto d-block">
         <div class="row">
-            <div class="col-6">
-                <input maxlength="4" class="form-control" id="w" value="5">
+            <div class="col-3">
+                <input  placeholder="w" maxlength="4" class="form-control" id="w" value="5">
             </div>
-            <div class="col-6">
-                <input maxlength="4" class="form-control" id="h" value="6">
+            <div class="col-3">
+                <input  placeholder="h" maxlength="4" class="form-control" id="h" value="6">
             </div>
+            <div class="col-3">
+                <input  placeholder="min" maxlength="4" class="form-control" id="min" value="-20">
+            </div>
+            <div class="col-3">
+                <input placeholder="max" maxlength="4" class="form-control" id="max" value="10">
+            </div>
+
             <div class="col-12">
                 <button class="btn btn-outline-secondary btn-lg btn-block" id="calc2"
-                    type="button">Преобразовать</button>
+                    type="button">Вычислить</button>
             </div>
             <div class="col-12">
                 <div id="output2"></div>
