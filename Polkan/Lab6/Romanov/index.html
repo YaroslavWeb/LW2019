@@ -24,13 +24,13 @@
         <img src="./lab6.png" class="img-fluid rounded mx-auto d-block">
         <div class="row">
             <div class="col-4">
-                <input placeholder="Длинна строки" maxlength="10" class="form-control" id="n" value=" ">
+                <input placeholder="Длина строки" maxlength="10" class="form-control" id="n" value=" " type = "number">
             </div>
             <div class="col-4">
-                <input placeholder="Минимальное значение" maxlength="4" class="form-control" id="v_min" value="-5">
+                <input placeholder="Минимальное значение" maxlength="4" class="form-control" id="v_min" value="-5" type = "number">
             </div>
             <div class="col-4">
-                <input placeholder="Максимальное значение" maxlength="4" class="form-control" id="v_max" value="10">
+                <input placeholder="Максимальное значение" maxlength="4" class="form-control" id="v_max" value="10" type = "number">
             </div>
             <div class="col-12">
                 <button class="btn btn-outline-secondary btn-lg btn-block" id="calc1" type="button">Вычислить</button>
@@ -44,17 +44,26 @@
         <!-- <img src="./img1.png" class="img-fluid rounded mx-auto d-block"> -->
         <div class="row">
             <div class="col-6">
-                <input maxlength="4" class="form-control" id="w" value="5">
+                <input maxlength="4" class="form-control" id="n2" value="4" placeholder="n" type = "number">
             </div>
             <div class="col-6">
-                <input maxlength="4" class="form-control" id="h" value="6">
+                <input maxlength="4" class="form-control" id="m" value="5" placeholder="m" type = "number">
+            </div>
+            <div class="col-6">
+                <input maxlength="4" class="form-control" id="v_min2" value="-10" placeholder="v_min" type = "number">
+            </div>
+            <div class="col-6">
+                <input maxlength="4" class="form-control" id="v_max2" value="10" placeholder="v_max" type = "number">
             </div>
             <div class="col-12">
                 <button class="btn btn-outline-secondary btn-lg btn-block" id="calc2"
-                    type="button">Преобразовать</button>
+                    type="button">Вычислить</button>
             </div>
             <div class="col-12">
                 <div id="output2"></div>
+            </div>
+            <div class="col-12">
+                <div id="output3"></div>
             </div>
         </div>
 </body>

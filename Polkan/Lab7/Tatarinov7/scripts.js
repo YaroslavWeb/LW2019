@@ -9,14 +9,14 @@ $('#calc1').click(() => {
     str = str.replace(/\([^()]*\)/g, '');
   
     $('#output1').append(`
-  <div class="alert alert-success" role="alert">
+  <div class="alert" role="alert">
       ${str}
   </div>
   `);
   }
   else{
     $('#output1').append(`
-    <div class="alert alert-warning" role="alert">
+    <div class="alert" role="alert">
       Введите значение.
     </div>
     `);
@@ -54,7 +54,7 @@ $('#calc2').click(() => {
     
     console.table(matrix);
     $('#output2').append(`
-    <div class="alert alert-success" role="alert">
+    <div class="alert" role="alert">
       vector= ${res}
     </div>
     `);
@@ -62,7 +62,7 @@ $('#calc2').click(() => {
   }
   else{
     $('#output2').append(`
-    <div class="alert alert-warning" role="alert">
+    <div class="alert" role="alert">
       Введите значение.
     </div>
     `);

@@ -33,7 +33,7 @@ $('#calc1').click(() => {
     numbers = numbers.sort((val1, val2) => val1 - val2);
 
     $('#output').append(`
-    <div class="alert alert-success" role="alert">
+    <div class="alert " role="alert">
         Числа по возрастанию: ${numbers}
     </div>`
   )
@@ -52,7 +52,7 @@ $('#calc2').click(() => {
           .join('');
       }
       $('#output1').append(`
-      <div class="alert alert-success" role="alert">
+      <div class="alert " role="alert">
           Преобразованая строка: ${removeDuplicateCharacters(val2)}
       </div>`
     )
